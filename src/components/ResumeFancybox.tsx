@@ -1,31 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import "../Resume.scss";
 import "./ResumeFancybox.scss";
-// import ReactFancyBox from 'react-fancybox';
-// import 'react-fancybox/lib/fancybox.css';
-
 import ResumeEducationFancybox from "./ResumeEducationFancybox";
-// import ResumeSkills from './ResumeSkills';
-
-// const FANCYBOX_STYLE = {
-//     position: 'fixed',
-//     top: '50%',
-//     left: '50%',
-//     transform: 'translate(-50%, -50%)',
-//     backgroundColor: '#FFF',
-//     padding: '50px',
-//     zIndex: 1000
-// }
-
-// const OVERLAY_STYLE = {
-//     position: 'fixed',
-//     top: 0,
-//     left: 0,
-//     right: 0,
-//     bottom: 0,
-//     backgroundColor: 'rgba(0, 0, 0, .7)',
-//     zIndex: 1000
-// }
 
 function ResumeFancybox({ open, children, onClose, tabResumeId }) {
   // Css code for arrows not displaying when we reach the start or end of resume section tabs
@@ -33,19 +9,12 @@ function ResumeFancybox({ open, children, onClose, tabResumeId }) {
     display: "none",
   };
 
-  const [counter, setCounter] = useState(1);
+  const [counter, setCounter] = React.useState(1);
 
   const onButtonClickAdd = (e) => {
-    // `current` points to the mounted text input element
-    // inputEl.current.focus();
-
     let num = parseInt(e.target.id);
     let count = (num += 1);
     setCounter(count);
-
-    // console.log(e.target.id);
-    // console.log(count);
-    console.log(counter);
 
     return count;
   };
@@ -54,10 +23,6 @@ function ResumeFancybox({ open, children, onClose, tabResumeId }) {
     let num = parseInt(e.target.id);
     let count = (num -= 1);
     setCounter(count);
-
-    // console.log(e.target.id);
-    // console.log(count);
-    console.log(counter);
 
     return count;
   };

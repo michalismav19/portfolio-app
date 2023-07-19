@@ -1,17 +1,12 @@
-// import logo from './logo.svg';
-// rfce auto function creator
-import React from "react";
-// import { withRouter } from "react-router";
-
 import "./App.scss";
-import Aboutme from "./components/Aboutme";
+import AboutMe from "./components/AboutMe";
 import Resume from "./components/Resume";
 
 function App() {
   return (
     <div className="main-container">
-      {/* Aboutme Component */}
-      <Aboutme />
+      {/* AboutMe Component */}
+      <AboutMe />
 
       <div className="vertical-divider-first"></div>
       <div className="horizontial-divider"></div>

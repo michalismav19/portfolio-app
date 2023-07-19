@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
     *,
@@ -22,14 +22,22 @@ export const GlobalStyles = createGlobalStyle`
         border-bottom: 2px solid ${({ theme }) => theme.text};
     }
 
+    .resume-info-details-section{
+        background-color: ${({ theme }) => theme.body};
+    }
+
     .vertical-divider-first,
     .horizontial-divider,
     .vertical-divider-second{
         background-image: 
-        linear-gradient(${({ theme }) => theme.text}, ${({ theme }) => theme.text}), 
-        linear-gradient(${({ theme }) => theme.text}, ${({ theme }) => theme.text}), 
-        linear-gradient(${({ theme }) => theme.text}, ${({ theme }) => theme.text}), 
-        linear-gradient(${({ theme }) => theme.text}, ${({ theme }) => theme.text}), 
+        linear-gradient(${({ theme }) => theme.text}, ${({ theme }) =>
+  theme.text}), 
+        linear-gradient(${({ theme }) => theme.text}, ${({ theme }) =>
+  theme.text}), 
+        linear-gradient(${({ theme }) => theme.text}, ${({ theme }) =>
+  theme.text}), 
+        linear-gradient(${({ theme }) => theme.text}, ${({ theme }) =>
+  theme.text}), 
         
         linear-gradient(#3fb0ac, #3fb0ac), 
         linear-gradient(#3fb0ac, #3fb0ac), 
@@ -94,4 +102,4 @@ export const GlobalStyles = createGlobalStyle`
         }
 
     }
-`
+`;

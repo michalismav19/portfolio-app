@@ -1,14 +1,11 @@
-import React from 'react';
-import './Background.scss';
-
-
+import "./Background.scss";
 
 function Background() {
-    return (
-        <div className="background-image">
-            <div className="background-image-container"></div>
-        </div>
-    )
+  return (
+    <div className="background-image">
+      <div className="background-image-container"></div>
+    </div>
+  );
 }
 
-export default Background
+export default Background;

@@ -1,22 +1,13 @@
-import React from "react";
-import "./Aboutme.scss";
+import "./AboutMe.scss";
 import prof_pic from "../images/michalis-profile.jpeg";
 import Typist from "react-typist"; //npm install react-typist --save
 import SocialMedia from "./SocialMedia";
 
-function Aboutme() {
-  const setDisplay = () => {
-    if (window.innerWidth <= 1025) {
-      return "block";
-    } else {
-      return "none";
-    }
-  };
-
+function AboutMe() {
   return (
     <div className="aboutme">
       <div className="aboutme-container">
-        <img src={prof_pic} alt="Profile Picture"></img>
+        <img src={prof_pic} alt="Profile Picture" />
         <div className="aboutme-main">
           <Typist>
             <span className="profile-surname">Michalis Mavromatakis</span>
@@ -44,4 +35,4 @@ function Aboutme() {
   );
 }
 
-export default Aboutme;
+export default AboutMe;

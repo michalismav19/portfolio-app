@@ -1,53 +1,13 @@
-import React, { useCallback, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Resume.scss";
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-import MagicSliderDots from "react-magic-slider-dots";
 import "react-magic-slider-dots/dist/magic-dots.css";
 
-// function SampleNextArrow(props) {
-//     const { className, style, onClick } = props;
-//     return (
-//       <div
-//         className={className}
-//         style={{ ...style, display: "block", background: "red" }}
-//         onClick={onClick}
-//       />
-//     );
-// }
-
-// function SamplePrevArrow(props) {
-//     const { className, style, onClick } = props;
-//     return (
-//         <div
-//         className={className}
-//         style={{ ...style, display: "block", background: "green" }}
-//         onClick={onClick}
-//         />
-//     );
-// }
-
 function Resume() {
-  // when click resume tab open fancybox
-  const [isOpen, setIsOpen] = useState(false);
-  // take the id of resume tab
-  const [counter, setCounter] = useState();
-
-  const onButtonClick = (e) => {
-    // console.log(e.target.parentNode.id);
-    setCounter(e.target.parentNode.id);
-
-    console.log(counter);
-    // return num;
-  };
-
   // when click arrow next icon display next section of this resume category
-  // const [isDisplay, setIsDisplay] = useState('education-info-1');
-
   const settings = {
     dots: true,
     className: "center",
@@ -57,10 +17,6 @@ function Resume() {
     slidesToShow: 3,
     arrows: false,
     speed: 500,
-    // autoplay:true,
-
-    // variableWidth: true,
-
     pauseOnHover: true,
     mobileFirst: true,
     responsive: [
@@ -85,28 +41,33 @@ function Resume() {
 
   // control resume tabs links
   const navigate = useNavigate();
-  const handleEducationLink = useCallback(
+  const handleEducationLink = React.useCallback(
     () => navigate("/education"),
     [navigate]
   );
-  const handleWorkLink = useCallback(() => navigate("/work"), [navigate]);
-  const handleSeminarsLink = useCallback(
+  const handleWorkLink = React.useCallback(() => navigate("/work"), [navigate]);
+  const handleSeminarsLink = React.useCallback(
     () => navigate("/seminars"),
     [navigate]
   );
-  const handleProjectsLink = useCallback(
+  const handleProjectsLink = React.useCallback(
     () => navigate("/projects"),
     [navigate]
   );
-  const handleOtherLink = useCallback(() => navigate("/other"), [navigate]);
-  const handleSkillsLink = useCallback(() => navigate("/skills"), [navigate]);
+  const handleOtherLink = React.useCallback(
+    () => navigate("/other"),
+    [navigate]
+  );
+  const handleSkillsLink = React.useCallback(
+    () => navigate("/skills"),
+    [navigate]
+  );
 
   return (
     <div className="resume">
       <div className="resume-container">
         <Slider {...settings}>
           {/** Education Tab */}
-          {/* <div id="tab-1" className="resume-tab" onClick={ (e) => { setIsOpen(true); onButtonClick(e)} }> */}
           <div id="tab-1" className="resume-tab" onClick={handleEducationLink}>
             <div className="resume-tab-container education-tab">
               <div className="resume-tab-title">
@@ -179,10 +140,7 @@ function Resume() {
                 <span className="view-btn">VIEW</span>
               </div>
             </div>
-            {/* </Link> */}
           </div>
-
-          {/** </div>*/}
         </Slider>
       </div>
     </div>

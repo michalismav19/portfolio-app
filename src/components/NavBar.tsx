@@ -10,12 +10,7 @@ function Navbar() {
 
   const showSidebar = () => setSidebar(!sidebar);
 
-  // const onButtonClick = (e) => {
-
-  // };
-
   const location = useLocation();
-  // console.log(location.pathname);
 
   let btnColor1 = "";
   let btnColor2 = "";
@@ -60,7 +55,6 @@ function Navbar() {
               onClick={showSidebar}
               style={{ color: "#000000" }}
             />
-            {/*}, () => { onButtonClick();}*/}
           </Link>
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
@@ -76,7 +70,6 @@ function Navbar() {
                 style={{ backgroundColor: btnColor1 }}
                 className="navbar-button"
               >
-                {/**<Link style={{ color: color1 }} className="aboutme-btn" to="/" onClick={() => changeColor1("#3fb0ac")}>**/}
                 <Link className="aboutme-btn" to="/">
                   HOME
                 </Link>
